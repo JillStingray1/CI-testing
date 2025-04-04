@@ -1,14 +1,26 @@
 #include <assert.h>
+#include <stdbool.h>
 #include <stdio.h>
 
 #include "include/add.h"
 
-void add_test() {
-    assert(add(3, 7) == 9 && "FAILED: add(3, 7) should return 9");
-    printf("Test Case 1 passed!\n");
+bool add_test() {
+    printf("Testing add(int a, int b)\n");
+    bool test_status = true;
+    printf("\tTest 1: ");
+    if (add(3, 7) == 10) {
+        printf("Passed!\n");
+    } else {
+        printf("Failed, add(3,7) == 10\n");
+        test_status = false;
+    }
+    return test_status;
 }
 
 int main() {
-    add_test();
-    return 0;
+    int exit_code = 0;
+    if (!add_test()) {
+        exit_code = 1;
+    }
+    return exit_code;
 }
