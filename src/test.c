@@ -16,11 +16,19 @@ bool add_test() {
     }
     return test_status;
 }
+bool test_fail() {
+    printf("automatic failed test\n");
+    return false;
+}
 
 int main() {
     int exit_code = 0;
     if (!add_test()) {
         exit_code = 1;
     }
+    if (!test_fail()) {
+        exit_code = 1;
+    }
+
     return exit_code;
 }
