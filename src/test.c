@@ -23,10 +23,10 @@ bool test_fail() {
 
 int main() {
     int exit_code = 0;
-    if (!add_test()) {
+    if (!test_fail()) {
         exit_code = 1;
     }
-    if (!test_fail()) {
+    if (!add_test()) {
         exit_code = 1;
     }
 
