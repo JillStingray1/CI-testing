@@ -6,8 +6,9 @@ void test_add(void) {
     CU_ASSERT(add(7, 10) == 17);
 }
 
-void test_add_fail(void) {
-    CU_ASSERT(add(7, 10) == 10);
+void test_subtract(void) {
+    CU_ASSERT(subtract(10, 7) == 3);
+    CU_ASSERT(subtract(10 + 5, 7) == 8);
 }
 
 int main() {
@@ -20,8 +21,7 @@ int main() {
     }
 
     if (NULL == CU_add_test(suite, "test of add()", test_add) ||
-        NULL == CU_add_test(suite, "Intentionally failing test of add()",
-                            test_add_fail)) {
+        NULL == CU_add_test(suite, "test of subtract()", test_subtract)) {
         CU_cleanup_registry();
         return CU_get_error();
     }
