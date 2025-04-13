@@ -32,5 +32,5 @@ int main() {
     if (CU_get_error() != CUE_SUCCESS) {
         return CU_get_error();
     }
-    return CU_get_number_of_failures() == 0;
+    return CU_get_number_of_failures() != 0;
 }
